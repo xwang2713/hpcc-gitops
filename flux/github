@@ -1,0 +1,5 @@
+github_user=""  # hpcc-systems
+github_email=""  # hpccbuild@hpccsystems.com
+github_repo=""  # flux-hpcc-cluster
+github_branch=""  # master
+github_path   = ""  # releases/local

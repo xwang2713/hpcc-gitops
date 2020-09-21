@@ -63,11 +63,11 @@ if ( ($github_branch -eq $null) -or ($github_branch -eq "") )
   $github_branch = "master"
 }
 
-helm install ${helm_operator_name} fluxcd/helm-operator `
+helm upgrade -i ${helm_operator_name} fluxcd/helm-operator `
             --namespace flux `
             --set helm.versions=v3
 
-helm install ${flux_name} fluxcd/flux `
+helm upgrade -i ${flux_name} fluxcd/flux `
        --set git.user=${github_user} `
        --set git.email=${github_email} `
        --set git.branch=${github_branch} `

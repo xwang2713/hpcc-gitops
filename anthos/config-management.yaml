@@ -1,0 +1,15 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+    name: config-management
+    namespace: config-management-system
+spec:
+  #clusterName: <CLUSTER-NAME>
+  git:
+    syncRepo: https://github.com/xwang2713/Anthos-Config-Repo
+    syncBranch: local-config
+    secretType: none
+    policyDir: "local"
+    syncWait: 2
+  enableAggregateNamespaceQuotas: true
+  enableHierarchicalResourceQuota: true
